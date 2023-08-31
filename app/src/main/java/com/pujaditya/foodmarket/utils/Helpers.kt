@@ -4,8 +4,17 @@ import android.widget.TextView
 import java.text.DecimalFormat
 
 object Helpers {
-    fun TextView.formatPrice(value : String) {
-        this.text = getCurrencyIDR(java.lang.Double.parseDouble(value))
+    fun TextView.formatPrice(value: String) {
+        if (value.isNotEmpty()) {
+            val doubleValue = try {
+                value.toDouble()
+            } catch (e: NumberFormatException) {
+                0.0 // Atau nilai default lainnya jika konversi gagal
+            }
+            this.text = getCurrencyIDR(doubleValue)
+        } else {
+            this.text = "IDR 0" // Nilai default jika string kosong
+        }
     }
 
     fun getCurrencyIDR (price : Double) : String {

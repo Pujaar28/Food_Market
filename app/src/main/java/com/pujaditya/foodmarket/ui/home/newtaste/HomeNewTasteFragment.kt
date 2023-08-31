@@ -31,21 +31,21 @@ class HomeNewTasteFragment : Fragment(),HomeNewTasteAdapter.ItemAdapterCallback 
           }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-//        initDataDummy()
-//        var adapter= HomeNewTasteAdapter(foodList,this)
-//        var layoutManager: RecyclerView.LayoutManager=
-//            LinearLayoutManager(activity)
-//        binding.rvData.layoutManager=layoutManager
-//        binding.rvData.adapter=adapter
+        initDataDummy()
+        var adapter= HomeNewTasteAdapter(foodList,this)
+        var layoutManager: RecyclerView.LayoutManager=
+            LinearLayoutManager(activity)
+        binding.rvData.layoutManager=layoutManager
+        binding.rvData.adapter=adapter
 
     }
 
-//    fun initDataDummy() {
-//        foodList = ArrayList()
-//        foodList.add(HomeVerticalModel("Cherry Healthy","10000","", 5f))
-//        foodList.add(HomeVerticalModel("Burger Tempeh", "20000","", 4.5f))
-//        foodList.add(HomeVerticalModel("Kasreng Rice", "30000","" ,5f))
-//    }
+    fun initDataDummy() {
+        foodList = ArrayList()
+        foodList.add(HomeVerticalModel("Cherry Healthy","10000","", 5f))
+        foodList.add(HomeVerticalModel("Burger Tempeh", "20000","", 4.5f))
+        foodList.add(HomeVerticalModel("Kasreng Rice", "30000","" ,5f))
+    }
 
     override fun onClick(v: View, data: HomeVerticalModel) {
         Toast.makeText(context,"Ini toast"+data.title,Toast.LENGTH_LONG).show()

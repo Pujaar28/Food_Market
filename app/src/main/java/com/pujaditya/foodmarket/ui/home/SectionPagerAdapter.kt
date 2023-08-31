@@ -29,12 +29,12 @@ class SectionPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
                 return fragment
             }
 
-            2 -> {
+            1 -> {
                 fragment = HomePopularFragment()
                 return fragment
             }
 
-            3 -> {
+            2 -> {
                 fragment = HomeRecommendedFragment()
                 return fragment
             }

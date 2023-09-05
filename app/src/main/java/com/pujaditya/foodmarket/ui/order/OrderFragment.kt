@@ -10,12 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.pujaditya.foodmarket.databinding.FragmentOrderBinding
 
 class OrderFragment : Fragment() {
-
-    private var _binding: FragmentOrderBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentOrderBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,16 +18,11 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentOrderBinding.inflate(inflater, container, false)
+        binding = FragmentOrderBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
 
         return root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+
 }

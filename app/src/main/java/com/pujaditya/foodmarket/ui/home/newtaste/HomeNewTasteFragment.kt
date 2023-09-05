@@ -1,5 +1,6 @@
 package com.pujaditya.foodmarket.ui.home.newtaste
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.pujaditya.foodmarket.databinding.FragmentHomeBinding
 import com.pujaditya.foodmarket.databinding.FragmentHomeNewTasteBinding
 import com.pujaditya.foodmarket.model.dummy.HomeModel
 import com.pujaditya.foodmarket.model.dummy.HomeVerticalModel
+import com.pujaditya.foodmarket.ui.detail.DetailActivity
 import com.pujaditya.foodmarket.ui.home.HomeAdapter
 import com.pujaditya.foodmarket.ui.home.SectionPagerAdapter
 
@@ -48,6 +50,8 @@ class HomeNewTasteFragment : Fragment(),HomeNewTasteAdapter.ItemAdapterCallback 
     }
 
     override fun onClick(v: View, data: HomeVerticalModel) {
+        val detail= Intent(activity, DetailActivity::class.java)
+        startActivity(detail)
         Toast.makeText(context,"Ini toast"+data.title,Toast.LENGTH_LONG).show()
     }
 }

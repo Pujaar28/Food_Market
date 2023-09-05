@@ -1,5 +1,6 @@
 package com.pujaditya.foodmarket.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pujaditya.foodmarket.databinding.FragmentHomeBinding
 import com.pujaditya.foodmarket.model.dummy.HomeModel
+import com.pujaditya.foodmarket.ui.detail.DetailActivity
 
 class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     private var foodList: ArrayList<HomeModel> = ArrayList()
@@ -49,6 +51,7 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback {
     }
 
     override fun onClick(v: View, data: HomeModel) {
-        TODO("Not yet implemented")
+        val detail= Intent(activity, DetailActivity::class.java)
+        startActivity(detail)
     }
 }
